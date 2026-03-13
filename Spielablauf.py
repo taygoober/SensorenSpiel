@@ -66,7 +66,10 @@ def playgame():
         print(Playerinputs)
 
         if Aufgabe1 == Playerinputs:
-            runde_gewonnen()
+            if runde == 5:
+                runde_gewonnen_gross
+            else:
+                runde_gewonnen()
             print(f"Glückwunsch, Sie haben Runde {runde} bestanden")
             # 1. Calculate and add the score for the round you just finished
             earned_points = score_berechnen(100, runde)
@@ -76,8 +79,7 @@ def playgame():
 
             runde = runde + 1
 
-            if runde == 5:
-                runde_gewonnen_gross
+
         else:
             runde_verloren()
             print(f"Falsch eingegeben. Ihr Score ist {score}")
