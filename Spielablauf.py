@@ -67,7 +67,7 @@ def playgame():
 
         if Aufgabe1 == Playerinputs:
             if runde == 5:
-                runde_gewonnen_gross
+                runde_gewonnen_gross()
             else:
                 runde_gewonnen()
             print(f"Glückwunsch, Sie haben Runde {runde} bestanden")
@@ -86,3 +86,4 @@ def playgame():
             break
 
 playgame()
+
