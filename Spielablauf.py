@@ -11,13 +11,30 @@ class RandomSensor:
 stage = RandomSensor()
 
 def runde_gewonnen():
-    buzzer.value = 0.5
+    buzzer.value = 0.5 
     
     buzzer.frequency = 600
     time.sleep(0.15)
     buzzer.frequency = 800
     time.sleep(0.3)
-    buzzer.value = 0.0     
+    buzzer.value = 0.0
+
+def runde_gewonnen_gross():
+    buzzer.value = 0.5
+
+    buzzer.frequency = 1319
+    time.sleep(0.125)
+    buzzer.frequency = 1568
+    time.sleep(0.125)
+    buzzer.frequency = 2637
+    time.sleep(0.125)
+    buzzer.frequency = 2093
+    time.sleep(0.125)
+    buzzer.frequency = 2349
+    time.sleep(0.125)
+    buzzer.frequency = 3136
+    time.sleep(0.125)
+    buzzer.value = 0.0
 
 def runde_verloren():
     buzzer.value = 0.5     
@@ -59,9 +76,8 @@ def playgame():
 
             runde = runde + 1
 
-            if runde > 10:
-                print("MIAU")
-                break
+            if runde == 5:
+                runde_gewonnen_gross
         else:
             runde_verloren()
             print(f"Falsch eingegeben. Ihr Score ist {score}")
